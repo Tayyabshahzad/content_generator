@@ -33,18 +33,14 @@
                         <button class="btn btn-sm btn-info"> Save </button>
                     </form>
 
-                    
-                        @if(Session::has('id'))
-                            &nbsp;&nbsp;&nbsp;&nbsp;
-                            <a  class="btn btn-sm btn-info" href="{{  route('view-content',Session::get('id')) }}"> View Content </a>
-                        @endif
+                     
                    
                 </div>
                
                     <ul>
 
                     @foreach ($keywords as $keyword )
-                            <li>  <a href="{{  route('generate-content',$keyword->id) }} " > Generate Content for  {{ $keyword->title }}   </a> </li> 
+                            <li>  <a href="{{  route('view-content',$keyword->id) }} " > Generate Content for  {{ $keyword->title }}   </a> </li> 
                     @endforeach
                 </ul>
             </div>
